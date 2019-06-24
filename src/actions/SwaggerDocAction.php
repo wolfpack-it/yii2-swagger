@@ -1,6 +1,6 @@
 <?php
 
-namespace WolfpackIT\swagger\actions\swagger;
+namespace WolfpackIT\swagger\actions;
 
 use light\swagger\SwaggerAction;
 use yii\helpers\ArrayHelper;

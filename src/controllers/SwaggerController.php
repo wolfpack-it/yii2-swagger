@@ -2,10 +2,11 @@
 
 namespace WolfpackIT\swagger\controllers;
 
-use WolfpackIT\swagger\actions\swagger\SwaggerApiAction;
-use WolfpackIT\swagger\actions\swagger\SwaggerDocAction;
+use WolfpackIT\swagger\actions\SwaggerApiAction;
+use WolfpackIT\swagger\actions\SwaggerDocAction;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 use yii\web\Controller;
 
 /**
