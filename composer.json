@@ -1,0 +1,30 @@
+{
+    "name": "wolfpack-it/yii2-swagger",
+    "description": "Swagger for Yii2, extension of light/yii2-swagger.",
+    "type": "library",
+    "require": {
+        "php": ">=7.1.0",
+
+        "light/yii2-swagger": "2.0.0-alpha",
+        "yiisoft/yii2": "~2.0.19",
+        "zircote/swagger-php": "^3.0.2 as 2.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joey Claessen",
+            "email": "joey_claessen@hotmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WolfpackIT\\swagger\\": ["src/"]
+        }
+    }
+}
