@@ -16,6 +16,11 @@ class SwaggerController extends Controller
 {
     public $defaultAction = 'doc';
 
+    /**
+     * @var array
+     */
+    public $scanDirs = [];
+
     public function actions()
     {
         return [
@@ -29,10 +34,7 @@ class SwaggerController extends Controller
             ],
             'api' => [
                 'class' => SwaggerApiAction::class,
-                'scanDir' => [
-                    \Yii::getAlias('@api/models'),
-                    \Yii::getAlias('@api/controllers'),
-                ],
+                'scanDir' => $this->scanDirs,
                 'replacements' => array_filter([
                     'OAUTH_BASE_URL' => ArrayHelper::getValue(\Yii::$app->params, 'swagger.oAuthConfiguration.baseUrl')
                 ])

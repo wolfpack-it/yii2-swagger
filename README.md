@@ -25,6 +25,17 @@ to the `require` section of your `composer.json` file.
 ## Usage
 
 Use the package by extending the `\WolfpackIT\swagger\controllers\SwaggerController` in the application where you need it.
+Override the init function to set the scan directories:
+```php
+public function init()
+{
+    $this->scanDirs = [
+         \Yii::getAlias('@api/models'),
+         \Yii::getAlias('@api/controllers'),
+    ];
+    parent::init;
+}
+```
 
 You need to add the following to the application params:
 
