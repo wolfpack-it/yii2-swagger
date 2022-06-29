@@ -1,18 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WolfpackIT\swagger\actions;
 
 use light\swagger\SwaggerAction;
 use yii\helpers\ArrayHelper;
 use yii\web\JsExpression;
+use yii\web\Response;
 
-/**
- * Class SwaggerDocAction
- * @package WolfpackIT\swagger\actions\swagger
- */
 class SwaggerDocAction extends SwaggerAction
 {
-    public function init()
+    public function init(): void
     {
         parent::init();
 
@@ -78,5 +77,18 @@ JS
         }
     }
 
+    public function run(): string
+    {
+        \Yii::$app->getResponse()->format = Response::FORMAT_HTML;
 
+        $this->controller->layout = false;
+
+        $view = $this->controller->getView();
+
+        return $view->renderFile(__DIR__ . '/../views/index.php', [
+            'configurations' => $this->prepareConfiguration(),
+            'oauthConfiguration' => $this->oauthConfiguration,
+            'title' => $this->title,
+        ], $this->controller);
+    }
 }

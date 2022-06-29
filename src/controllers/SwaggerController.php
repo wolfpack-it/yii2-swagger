@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WolfpackIT\swagger\controllers;
 
 use WolfpackIT\swagger\actions\SwaggerApiAction;
@@ -9,18 +11,11 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\web\Controller;
 
-/**
- * Class SwaggerController
- * @package WolfpackIT\swagger\controllers
- */
 class SwaggerController extends Controller
 {
     public $defaultAction = 'doc';
 
-    /**
-     * @var array
-     */
-    public $scanDirs = [];
+    public array $scanDirs = [];
 
     public function actions()
     {
@@ -45,7 +40,7 @@ class SwaggerController extends Controller
 
     public function actionRedirect()
     {
-        return $this->renderPartial('@bower/swagger-ui/dist/oauth2-redirect.html');
+        return $this->renderPartial('@vendor/swagger-api/swagger-ui/dist/oauth2-redirect.html');
     }
 
     public function behaviors(): array

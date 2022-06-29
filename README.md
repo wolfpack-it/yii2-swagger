@@ -22,12 +22,6 @@ or add
 
 to the `require` section of your `composer.json` file.
 
-If Swagger PHP version 3 or higher is desired, also install:
-
-```html
-"zircote/swagger-php": "<latest version> as 2.0.0",
-```
-
 ## Usage
 
 Use the package by extending the `\WolfpackIT\swagger\controllers\SwaggerController` in the application where you need it.
