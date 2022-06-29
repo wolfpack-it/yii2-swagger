@@ -1,36 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace WolfpackIT\swagger\actions;
 
 use OpenApi\Annotations\OpenApi;
-use function OpenApi\scan;
 use yii\helpers\Json;
 
-/**
- * Class SwaggerApiAction
- * @package WolfpackIT\swagger\actions
- */
 class SwaggerApiAction extends \light\swagger\SwaggerApiAction
 {
     /**
      * Key value replacements after converting to json.
      * Replacements will be done like: {key} => value
-     *
-     * @var array
      */
-    public $replacements = [];
+    public array $replacements = [];
 
-    /**
-     * Get swagger object
-     *
-     * @return OpenApi
-     */
-    protected function getSwagger()
-    {
-        return scan($this->scanDir, $this->scanOptions);
-    }
-
-    public function run()
+    public function run(): array
     {
         /** @var OpenApi $specification */
         $specification = parent::run();
